@@ -1,0 +1,63 @@
+# C/C++ 프로젝트를 위한 .gitignore 파일
+
+# ------------------------------------
+# 1. 빌드 아티팩트 (Build Artifacts)
+# ------------------------------------
+
+# 실행 파일 (Executables)
+# 컴파일 후 생성되는 최종 실행 파일
+*.exe
+*.out
+a.out
+*.elf
+
+# 오브젝트 파일 및 컴파일러 임시 파일
+# 각 소스 파일 컴파일 시 생성되는 중간 파일
+*.o
+*.obj
+
+# 라이브러리 파일 (Shared and Static Libraries)
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+
+# 디버깅 및 프로파일링 파일
+*.gch
+*.pch
+*.gcda
+*.gcno
+*.gcov
+*.d
+
+# 빌드 출력 디렉토리 (사용자가 요청한 build/ 포함)
+# 이 폴더 안에 모든 빌드 결과물(실행 파일 등)이 저장됩니다.
+build/
+bin/
+tmp/
+cmake-build-*/
+Makefile.local
+
+# ------------------------------------
+# 2. IDE 및 편집기 설정 (VS Code)
+# ------------------------------------
+
+# Visual Studio Code 설정 디렉토리 (사용자가 요청함)
+# workspace별 설정, tasks, launch 설정 등이 포함되므로 제외
+.vscode/
+.clang-format
+
+# VS Code Workspace 파일
+*.code-workspace
+
+# ------------------------------------
+# 3. OS 및 기타 임시 파일
+# ------------------------------------
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
