@@ -9,8 +9,8 @@
 #include <pthread.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <sys/wait.h> // get_external_ip 함수를 위해 추가
-#include <errno.h>    // 에러 디버깅을 위해 추가
+#include <sys/wait.h> // get_external_ip 함수를 위해 
+#include <errno.h>    // 에러 디버깅을 위해
 
 #define SERVER_IP ""
 #define CHAT_PORT 8080
@@ -25,7 +25,7 @@ GtkEntry *message_entry;
 GtkWidget *main_window;
 char my_nickname[NICKNAME_SIZE] = "";
 int chat_sock_fd = -1;
-char my_external_ip[16] = ""; // ✅ [수정] 공인 IP 주소를 저장할 전역 변수
+char my_external_ip[16] = ""; // 공인 IP 주소를 저장할 전역 변수
 
 // --- 네트워크 및 파일 전송 관련 함수 선언 ---
 void on_send_button_clicked(GtkWidget *widget, gpointer data);
@@ -34,7 +34,7 @@ void connect_and_start_chat(const char *nickname, GtkWidget *parent_window);
 void* receive_thread(void* arg);
 void* file_receive_client_thread(void *arg);
 void* file_send_server_thread(void *arg);
-int get_external_ip(char *ip_buffer, size_t buffer_size); // ✅ [추가] 외부 IP 획득 함수 선언
+int get_external_ip(char *ip_buffer, size_t buffer_size); // 외부 IP 획득 함수 선언
 
 // --- GTK GUI 업데이트 (메인 스레드 안전) ---
 
@@ -273,7 +273,7 @@ void on_file_button_clicked(GtkWidget *widget, gpointer data) {
                 char *filename = strrchr(filepath, '/') ? strrchr(filepath, '/') + 1 : filepath;
                 char request_msg[BUFFER_SIZE];
                 
-                // ✅ [수정] 전역 변수에 저장된 IP를 사용
+                // 전역 변수에 저장된 IP를 사용
                 const char *local_ip = my_external_ip; 
                 int temp_port = FILE_TRANSFER_PORT; 
                 
