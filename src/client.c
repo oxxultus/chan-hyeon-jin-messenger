@@ -12,7 +12,7 @@
 #include <sys/wait.h> // get_external_ip 함수를 위해 추가
 #include <errno.h>    // 에러 디버깅을 위해 추가
 
-#define SERVER_IP "221.161.182.186"
+#define SERVER_IP ""
 #define CHAT_PORT 8080
 #define BUFFER_SIZE 1024
 #define NICKNAME_SIZE 30
